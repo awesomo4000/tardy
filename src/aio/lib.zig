@@ -55,7 +55,7 @@ pub fn auto_async_match() AsyncIOType {
         },
         .windows => return AsyncIOType.poll,
         .ios, .macos, .watchos, .tvos, .visionos => return AsyncIOType.kqueue,
-        .kfreebsd, .freebsd, .openbsd, .netbsd, .dragonfly => return AsyncIOType.kqueue,
+        .freebsd, .openbsd, .netbsd, .dragonfly => return AsyncIOType.kqueue,
         .solaris, .illumos => return AsyncIOType.poll,
         else => @compileError("Unsupported platform! Provide a custom Async I/O backend."),
     }

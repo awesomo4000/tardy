@@ -15,7 +15,7 @@ const SharedParams = @import("lib.zig").SharedParams;
 const First = @import("first.zig");
 const Second = @import("second.zig");
 
-pub const std_options = .{ .log_level = .debug };
+pub const std_options = std.Options{ .log_level = .debug };
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
